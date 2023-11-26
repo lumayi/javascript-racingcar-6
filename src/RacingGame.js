@@ -8,20 +8,20 @@ export default class RacingGame {
 
   // 이렇게 결과를 클래스 내에서 관리해도 괜찮을까?
   // initialize 함수를 사용해 클래스 생성자의 값을 초기화해줘도 괜찮을까?
-  #result;
+  #distances;
 
   constructor(cars, rounds) {
     this.#cars = cars;
     this.#rounds = rounds;
-    this.#result = this.#initializeResult(cars);
+    this.#distances = this.#initializeDistances(cars);
   }
 
-  #initializeResult(cars) {
-    const result = {};
+  #initializeDistances(cars) {
+    const distances = {};
     cars.forEach((car) => {
-      result[car] = 0;
+      distances[car] = 0;
     });
-    return result;
+    return distances;
   }
 
   runRaceRounds() {
@@ -51,17 +51,17 @@ export default class RacingGame {
     Object.keys(scores).forEach((car) => {
       const score = scores[car];
       if (score >= 4) {
-        this.#result[car] += 1;
+        this.#distances[car] += 1;
       }
     });
-    return this.#result;
+    return this.#distances;
   }
 
   #getRaceWinners() {
     let max = 0;
     let winners = [];
-    Object.keys(this.#result).forEach((car) => {
-      const distance = this.#result[car];
+    Object.keys(this.#distances).forEach((car) => {
+      const distance = this.#distances[car];
       if (distance > max) {
         max = distance;
         winners = [];

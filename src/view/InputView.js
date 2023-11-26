@@ -8,9 +8,12 @@ const InputView = {
     );
     const cars = user.split(',');
     Validate.checkAllNamingValidations(cars);
+    return cars;
   },
   async getRacingRounds() {
     const rounds = await Console.readLineAsync('시도할 횟수는 몇 회인가요?\n');
+    Validate.checkAllNumberValidations(rounds);
+    return rounds;
   },
 };
 export default InputView;

@@ -24,6 +24,12 @@ export default class RacingGame {
     return result;
   }
 
+  runRaceRounds() {
+    for (let i = 0; i < this.rounds; i += 1) {
+      this.#calculateRoundResult();
+    }
+  }
+
   #calculateRoundResult() {
     const scores = this.#getScores();
     const accumulatedResult = this.#isMovingForward(scores);

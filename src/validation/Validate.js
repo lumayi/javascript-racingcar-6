@@ -1,7 +1,7 @@
 import { RULES } from '../constants/constants';
 
 export default class Validate {
-  static checkAllValidations(cars) {
+  static checkAllNamingValidations(cars) {
     cars.forEach((car) => {
       this.isValidNameLength(car);
     });
@@ -27,5 +27,11 @@ export default class Validate {
         throw new Error('[ERROR] 이름은 중복될 수 없습니다.');
       }
     });
+  }
+
+  isNumber(round) {
+    if (Number.isNaN(round)) {
+      throw new Error('[ERROR] 0이상의 정수를 입력해주세요.');
+    }
   }
 }

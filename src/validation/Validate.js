@@ -15,4 +15,12 @@ class Validate {
       throw new Error('[ERROR] 자동차는 2대 이상이어야 합니다.');
     }
   }
+
+  static isDuplicated(names) {
+    names.forEach((name, index) => {
+      if (names.indexOf(name) !== index) {
+        throw new Error('[ERROR] 이름은 중복될 수 없습니다.');
+      }
+    });
+  }
 }

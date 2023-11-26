@@ -28,7 +28,7 @@ export default class RacingGame {
       this.#calculateRoundResult();
     }
     const winners = this.#getRaceWinners();
-    OutputView.printWinners(winners);
+    return OutputView.printWinners(winners);
   }
 
   #calculateRoundResult() {

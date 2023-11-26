@@ -10,13 +10,14 @@
   - [ ] 자동차 이름은 쉼표로 구분한다.
   - [ ] 이름이 0자 이하, 5자 초과일 시, 예외처리한다.
   - [ ] 자동차 이름이 1대 이하일 경우, 예외처리한다.
+  - [ ] 이름이 중복일 경우, 예외처리한다.
 - [ ] 사용자로부터 경주를 시도할 횟수를 받는다. #InputView - getRacingRounds()
   - [ ] 숫자가 아닌 문자열을 입력할 시, 예외처리한다.
   - [ ] 1 이상의 정수가 아닐 시, 예외처리한다.
 - [ ] 자동차 경주를 시도할 횟수만큼 반복한다. #RacingGame - runRaceRounds()
 - [ ] 자동차 경주 #RacingGame - calculateRoundResult()
   - [x] 각 자동차 수만큼의 0-9사이의 무작위 수를 구한다.
-  - [ ] 무작위 수가 4이상일 경우, 전진한다. #RacingGame - isMovingForward()
+  - [x] 무작위 수가 4이상일 경우, 전진한다.
   - [ ] 실행 결과를 '-'를 사용하여 출력한다. #OutputView - printRoundResult()
 - [ ] 게임이 완료되면, 우승자를 출력한다. #OutputView - printWinners()
   - [ ] 가장 많이 전진한 사람이 우승한다. #RacingGame - getRaceWinner()

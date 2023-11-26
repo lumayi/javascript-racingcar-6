@@ -6,8 +6,6 @@ export default class RacingGame {
 
   #rounds;
 
-  // 이렇게 결과를 클래스 내에서 관리해도 괜찮을까?
-  // initialize 함수를 사용해 클래스 생성자의 값을 초기화해줘도 괜찮을까?
   #distances;
 
   constructor(cars, rounds) {
@@ -58,19 +56,19 @@ export default class RacingGame {
   }
 
   #getRaceWinners() {
-    let max = 0;
-    let winners = [];
-    Object.keys(this.#distances).forEach((car) => {
+    const max = this.#getHighestScore();
+    const winners = Object.keys(this.#distances).filter((car) => {
       const distance = this.#distances[car];
-      if (distance > max) {
-        max = distance;
-        winners = [];
-        winners.push(car);
-      }
-      if (distance === max && !winners.includes(car)) {
-        winners.push(car);
-      }
+      return max === distance;
     });
     return winners;
+  }
+
+  #getHighestScore() {
+    let max = 0;
+    Object.keys(this.#distances).forEach((car) => {
+      const distance = this.#distances[car];
+      if (distance > max) max = distance;
+    });
   }
 }

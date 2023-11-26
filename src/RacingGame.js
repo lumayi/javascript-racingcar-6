@@ -28,6 +28,7 @@ export default class RacingGame {
     for (let i = 0; i < this.rounds; i += 1) {
       this.#calculateRoundResult();
     }
+    const winner = this.#getRaceWinners();
   }
 
   #calculateRoundResult() {
@@ -53,5 +54,20 @@ export default class RacingGame {
       }
     });
     return this.#result;
+  }
+
+  #getRaceWinners() {
+    let max = 0;
+    let winners = [];
+    Object.keys(this.#result).forEach((car) => {
+      const distance = this.#result[car];
+      if (distance > max) {
+        max = distance;
+        winners = [];
+        winners.push(car);
+      }
+      if (distance === max) winners.push(car);
+    });
+    return winners;
   }
 }

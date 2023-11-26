@@ -1,4 +1,6 @@
-class RacingGame {
+import Computer from './computer/Computer.js';
+
+export default class RacingGame {
   #cars;
 
   #rounds;
@@ -8,5 +10,16 @@ class RacingGame {
     this.#rounds = rounds;
   }
 
-  #calculateRoundResult() {}
+  #calculateRoundResult() {
+    const scores = this.#getScores();
+  }
+
+  #getScores() {
+    const scores = [];
+    this.#cars.forEach((car) => {
+      const score = Computer.getRandomeNumber();
+      scores.push({ [car]: score });
+    });
+    return scores;
+  }
 }

@@ -1,4 +1,4 @@
-import Validate from '../src/validation/Validate';
+import Validate from '../src/validation/Validate.js';
 
 describe('예외 테스트', () => {
   const nameCases = ['', 'helloLuma'];

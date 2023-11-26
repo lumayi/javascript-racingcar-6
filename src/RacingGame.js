@@ -23,6 +23,7 @@ export default class RacingGame {
   }
 
   runRaceRounds() {
+    OutputView.printResultAnnounce();
     for (let i = 0; i < this.#rounds; i += 1) {
       this.#calculateRoundResult();
     }

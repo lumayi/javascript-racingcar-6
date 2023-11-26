@@ -11,6 +11,9 @@ const OutputView = {
   printWinners(winners) {
     Console.print(`최종 우승자 : ${winners.join(', ')}`);
   },
+  printResultAnnounce() {
+    Console.print('\n실행 결과');
+  },
 };
 
 export default OutputView;

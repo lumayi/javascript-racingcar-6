@@ -1,4 +1,4 @@
-import { RULES } from '../constants/constants';
+import { RULES } from '../constants/constants.js';
 
 export default class Validate {
   static checkAllNamingValidations(cars) {

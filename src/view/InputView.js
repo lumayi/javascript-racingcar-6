@@ -12,8 +12,8 @@ const InputView = {
   },
   async getRacingRounds() {
     const rounds = await Console.readLineAsync('시도할 횟수는 몇 회인가요?\n');
-    Validate.checkAllNumberValidations(rounds);
-    return rounds;
+    Validate.isPositiveInteger(rounds);
+    return Number(rounds);
   },
 };
 export default InputView;

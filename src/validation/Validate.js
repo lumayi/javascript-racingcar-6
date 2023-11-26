@@ -9,11 +9,6 @@ export default class Validate {
     Validate.isDuplicated(cars);
   }
 
-  static checkAllNumberValidations(round) {
-    Validate.isNumber(round);
-    Validate.isPositiveInteger(round);
-  }
-
   static isValidNameLength(car) {
     if (car.length < RULES.minNameLength || car.length > RULES.maxNameLength) {
       throw new Error('[ERROR] 이름은 1자 이상, 5자 이하여야 합니다.');
@@ -34,14 +29,9 @@ export default class Validate {
     });
   }
 
-  static isNumber(round) {
-    if (Number.isNaN(round)) {
-      throw new Error('[ERROR] 0 이상의 정수를 입력해주세요.');
-    }
-  }
-
   static isPositiveInteger(round) {
-    if (!Number.isInteger(round) && round < 1) {
+    const numberPattern = /^\d$/g;
+    if (!numberPattern.test(round) || round < 1) {
       throw new Error('[ERROR] 0 이상의 정수를 입력해주세요.');
     }
   }

@@ -25,10 +25,11 @@ export default class RacingGame {
   }
 
   runRaceRounds() {
-    for (let i = 0; i < this.rounds; i += 1) {
+    for (let i = 0; i < this.#rounds; i += 1) {
       this.#calculateRoundResult();
     }
-    const winner = this.#getRaceWinners();
+    const winners = this.#getRaceWinners();
+    OutputView.printWinners(winners);
   }
 
   #calculateRoundResult() {
@@ -66,7 +67,9 @@ export default class RacingGame {
         winners = [];
         winners.push(car);
       }
-      if (distance === max) winners.push(car);
+      if (distance === max && !winners.includes(car)) {
+        winners.push(car);
+      }
     });
     return winners;
   }

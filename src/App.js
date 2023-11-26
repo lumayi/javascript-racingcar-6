@@ -1,8 +1,11 @@
 import RacingGame from './RacingGame.js';
+import InputView from './view/InputView.js';
 
 class App {
   async play() {
-    const game = new RacingGame(['pobi', 'woni', 'jun'], 3);
+    const cars = await InputView.getCarName();
+    const rounds = await InputView.getRacingRounds();
+    const game = new RacingGame(cars, rounds);
     game.runRaceRounds();
   }
 }

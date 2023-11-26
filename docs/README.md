@@ -18,7 +18,7 @@
 - [ ] 자동차 경주 #RacingGame - calculateRoundResult()
   - [x] 각 자동차 수만큼의 0-9사이의 무작위 수를 구한다.
   - [x] 무작위 수가 4이상일 경우, 전진한다.
-  - [ ] 실행 결과를 '-'를 사용하여 출력한다. #OutputView - printRoundResult()
+  - [ ] 실행 결과를 '-'를 사용하여 출력한다.
 - [ ] 게임이 완료되면, 우승자를 출력한다. #OutputView - printWinners()
   - [ ] 가장 많이 전진한 사람이 우승한다. #RacingGame - getRaceWinner()
   - [ ] 우승자가 한 명 이상일 경우, 쉼표를 이용하여 구분할 수 있다.

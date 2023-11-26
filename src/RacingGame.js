@@ -1,4 +1,5 @@
 import Computer from './computer/Computer.js';
+import OutputView from './view/OutputView.js';
 
 export default class RacingGame {
   #cars;
@@ -26,6 +27,7 @@ export default class RacingGame {
   #calculateRoundResult() {
     const scores = this.#getScores();
     const accumulatedResult = this.#isMovingForward(scores);
+    OutputView.printDistances(accumulatedResult);
   }
 
   #getScores() {
